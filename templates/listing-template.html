@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reusable Listing/Review Template — ListingsAI</title>
+    <meta name="description" content="The reusable template ListingsAI uses for every program review. Drop-in scaffold with all required fields: best-for, cost, earn/save value, pros+cons, works-globally note, verdict+stars, FTC line.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Listing Template (Internal) — ListingsAI">
+    <meta property="og:description" content="Internal scaffold template used for every ListingsAI program review.">
+    <meta property="og:url" content="https://listingsai.directory/templates/listing-template.html">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo"><span class="logo-icon">◈</span><span class="logo-text">Listings<span>AI</span></span></a>
+            <nav class="nav-links">
+                <a href="../category/make-money.html" class="nav-link">Make Money</a>
+                <a href="../category/save-money.html" class="nav-link">Save Money</a>
+                <a href="../category/get-paid-to-start.html" class="nav-link">Get Paid to Start</a>
+                <a href="../compare/index.html" class="nav-link">Compare</a>
+                <a href="../about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article class="section" style="padding-top: 100px;">
+            <div class="container" style="max-width: 800px;">
+                <div class="breadcrumb" style="margin-bottom:16px;font-size:0.85rem;color:var(--text-muted);">
+                    <a href="../index.html" style="color:var(--text-muted);">Home</a> › <span style="color:var(--text-primary);">Templates</span> › <span style="color:var(--text-primary);">Listing Template</span>
+                </div>
+                <span class="section-tag">Internal Scaffold</span>
+                <h1 style="font-size:2.5rem;font-weight:900;margin:16px 0 24px;line-height:1.1;">[Program Name] — Honest Review</h1>
+                <p style="font-size:1.1rem;color:var(--text-secondary);line-height:1.7;margin-bottom:32px;">[One-line summary: what it is, in plain English. 12-20 words. The kind of line that tells a reader in 5 seconds whether to keep reading.]</p>
+
+                <!-- Quick verdict card -->
+                <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:28px;margin-bottom:32px;">
+                    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:16px;flex-wrap:wrap;gap:12px;">
+                        <div>
+                            <p style="font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Our Verdict</p>
+                            <p style="font-size:1.4rem;font-weight:800;margin:0;">[Verdict — one short paragraph: who should use this, who shouldn't, and why.]</p>
+                        </div>
+                        <span style="background:var(--accent);color:white;padding:6px 14px;border-radius:12px;font-size:0.9rem;font-weight:700;white-space:nowrap;">⭐ [X.X]/5</span>
+                    </div>
+                </div>
+
+                <!-- Quick facts grid -->
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:32px;">
+                    <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:18px;">
+                        <p style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Best For</p>
+                        <p style="font-size:0.95rem;font-weight:600;margin:0;">[Who this is right for, in one line. e.g., "Course creators on a budget" or "Anyone sending money internationally"]</p>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:18px;">
+                        <p style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Starts At</p>
+                        <p style="font-size:0.95rem;font-weight:600;margin:0;">[Free / $X/mo / $X one-time]</p>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:18px;">
+                        <p style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Free Plan?</p>
+                        <p style="font-size:0.95rem;font-weight:600;margin:0;">[Yes / Yes (with limits) / No / Trial only]</p>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:18px;">
+                        <p style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Works Globally?</p>
+                        <p style="font-size:0.95rem;font-weight:600;margin:0;">[Yes / Mostly / Limited / US only]</p>
+                    </div>
+                </div>
+
+                <!-- What it costs -->
+                <h2 style="font-size:1.6rem;font-weight:800;margin:32px 0 16px;">What it costs</h2>
+                <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">[Real pricing, including all tiers. Mention free tier limits specifically. Mention any add-on costs (transaction fees, email fees, etc.). If there's a free trial, state the duration and whether a credit card is required.]</p>
+
+                <!-- How it helps you earn or save -->
+                <h2 style="font-size:1.6rem;font-weight:800;margin:32px 0 16px;">How it helps you [earn/save]</h2>
+                <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">[Concrete and realistic. NO income guarantees. Use honest framing: "some users earn…", "realistically, expect…". Give a range based on what real users report, not the dream-case scenario. 2-3 paragraphs.]</p>
+                <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">[If the program has multiple ways to monetize — e.g., a CRM with affiliate + SaaS revenue potential — list them. The reader should walk away knowing the 2-3 real ways this helps them.]</p>
+
+                <!-- Honest pros -->
+                <h2 style="font-size:1.6rem;font-weight:800;margin:32px 0 16px;">What we like</h2>
+                <ul style="color:var(--text-secondary);line-height:2;margin-bottom:24px;padding-left:24px;">
+                    <li>[Real pro #1 — specific, not generic. "Free plan is actually usable" beats "Free plan available."]</li>
+                    <li>[Real pro #2 — mention features the user might not know about.]</li>
+                    <li>[Real pro #3 — include the "why it matters" for the reader.]</li>
+                    <li>[Real pro #4 — bonus, if you have one.]</li>
+                </ul>
+
+                <!-- Real cons -->
+                <h2 style="font-size:1.6rem;font-weight:800;margin:32px 0 16px;">What we don't like</h2>
+                <ul style="color:var(--text-secondary);line-height:2;margin-bottom:24px;padding-left:24px;">
+                    <li>[Real con #1 — be specific. "Templates look dated" beats "UI could be better."]</li>
+                    <li>[Real con #2 — mention what the user loses by choosing this over alternatives.]</li>
+                    <li>[Real con #3 — if there's a hidden cost, mention it here.]</li>
+                </ul>
+
+                <!-- Works globally -->
+                <h2 style="font-size:1.6rem;font-weight:800;margin:32px 0 16px;">Works globally?</h2>
+                <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">[Be specific. "Yes, available in 200+ countries" or "US, UK, Canada, Australia only" or "Available globally but PayPal is the only payout method, which excludes several countries." Always mention the payout method.]</p>
+                <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">[If there are country-specific restrictions, call them out. If language support varies, mention that too.]</p>
+
+                <!-- Our verdict -->
+                <h2 style="font-size:1.6rem;font-weight:800;margin:32px 0 16px;">Our verdict</h2>
+                <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">[2-3 sentence verdict. Direct. State who should use this, who shouldn't, and what makes it stand out. If it's a "good but not great" tool, say so.]</p>
+
+                <!-- Star rating system -->
+                <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;margin-bottom:32px;">
+                    <p style="font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;">Our Rating</p>
+                    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                        <span style="color:var(--warning);font-size:1.5rem;">★★★★★</span>
+                        <span style="color:var(--text-secondary);font-size:0.9rem;">[X.X] / 5 — [one-line explanation of the score]</span>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div style="background:linear-gradient(135deg,var(--accent),var(--gradient-end));border-radius:var(--radius-xl);padding:32px;margin-bottom:24px;text-align:center;color:white;">
+                    <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:12px;color:white;">Ready to try [Program Name]?</h3>
+                    <p style="color:rgba(255,255,255,0.9);line-height:1.7;margin-bottom:20px;">[One-line pitch for the action button. e.g., "Free plan, no credit card required." or "Start your 14-day trial today."]</p>
+                    <a href="[AFFILIATE LINK]" target="_blank" rel="noopener" style="display:inline-block;padding:14px 32px;background:white;color:var(--accent);border-radius:var(--radius-md);font-weight:700;text-decoration:none;font-size:1.05rem;">Try [Program Name] [Free / Now] →</a>
+                </div>
+
+                <!-- FTC line — REQUIRED on every listing -->
+                <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:18px;margin-bottom:32px;">
+                    <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.7;margin:0;"><strong>Affiliate Disclosure:</strong> If you sign up for [Program Name] through our link, ListingsAI may earn a commission at no extra cost to you. We only recommend tools we'd use ourselves. Read our full <a href="../affiliate-disclosure.html" style="color:var(--accent);">affiliate disclosure</a>.</p>
+                </div>
+
+                <!-- Related tools -->
+                <h2 style="font-size:1.6rem;font-weight:800;margin:32px 0 16px;">Related reviews</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:32px;">
+                    <a href="../category/make-money.html" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:18px;text-decoration:none;color:inherit;">
+                        <p style="font-weight:700;margin-bottom:4px;">[Related Tool #1]</p>
+                        <p style="font-size:0.85rem;color:var(--text-muted);margin:0;">Read review →</p>
+                    </a>
+                    <a href="../category/make-money.html" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:18px;text-decoration:none;color:inherit;">
+                        <p style="font-weight:700;margin-bottom:4px;">[Related Tool #2]</p>
+                        <p style="font-size:0.85rem;color:var(--text-muted);margin:0;">Read review →</p>
+                    </a>
+                    <a href="../compare/index.html" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:18px;text-decoration:none;color:inherit;">
+                        <p style="font-weight:700;margin-bottom:4px;">[Comparison Page]</p>
+                        <p style="font-size:0.85rem;color:var(--text-muted);margin:0;">See comparison →</p>
+                    </a>
+                </div>
+
+                <!-- Footer of page -->
+                <div style="border-top:1px solid var(--border-color);padding-top:24px;margin-top:24px;">
+                    <p style="color:var(--text-muted);font-size:0.85rem;">Last reviewed: [Month YYYY]. Next review: [Month YYYY]. Spotted an inaccuracy? <a href="../contact.html" style="color:var(--accent);">Tell us</a>.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>© 2026 Brain Storm Corp — ListingsAI · <a href="../affiliate-disclosure.html">Affiliate Disclosure</a> · <a href="../how-we-review.html">How We Review</a> · <a href="../contact.html">Contact</a></p><p>Independently reviewed · Affiliate-supported</p></div></div></footer>
+</body>
+</html>
