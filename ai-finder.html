@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tool Finder — ListingsAI | Find Your Best Money Tool</title>
-    <meta name="description" content="Tell us what you want to earn and your situation. Get a personalized recommendation across AI tools, automation platforms, and online programs. Honest, no hype.">
+    <meta name="theme-color" content="#0a0a0c">
+    <title>Tool Finder — ListingsAI | Find Your Best Match</title>
+    <meta name="description" content="Get a personalized tool recommendation across AI tools, automation platforms, and online programs. Answer 3 questions, see your top matches.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://listingsai.directory/ai-finder.html">
     <link rel="stylesheet" href="styles.css">
@@ -12,40 +13,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Tool Finder — ListingsAI | Find Your Best Money Tool">
-    <meta property="og:description" content="Get a personalized tool recommendation across AI tools, automation platforms, and online programs. Honest, no hype.">
+    <meta property="og:title" content="Tool Finder — ListingsAI">
+    <meta property="og:description" content="Find your best tool. Personalized recommendations.">
     <meta property="og:url" content="https://listingsai.directory/ai-finder.html">
     <meta property="og:site_name" content="ListingsAI">
-    <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tool Finder — ListingsAI | Find Your Best Money Tool">
-    <meta name="twitter:description" content="Get a personalized tool recommendation. Honest, no hype.">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebApplication","name":"ListingsAI Tool Finder","description":"Recommendation engine for AI tools and online programs that help people earn or save money.","url":"https://listingsai.directory/ai-finder.html","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free to use"}}
     </script>
     <style>
-        .ai-finder-hero {padding: 120px 0 60px;text-align: center;background: linear-gradient(180deg,var(--bg-secondary) 0%,var(--bg-primary) 100%);}
-        .ai-finder-form {max-width: 700px;margin: 40px auto 0;background: var(--bg-card);border-radius: var(--radius-xl);padding: 40px;border: 1px solid var(--border-color);}
-        .form-group {margin-bottom: 24px;text-align: left;}
-        .form-label {display: block;font-weight: 600;margin-bottom: 8px;color: var(--text-primary);}
-        .form-select, .form-input {width: 100%;padding: 14px 18px;background: var(--bg-primary);border: 1px solid var(--border-color);border-radius: var(--radius-md);color: var(--text-primary);font-size: 1rem;font-family: inherit;transition: border-color 0.2s,box-shadow 0.2s;}
-        .form-select:focus, .form-input:focus {outline: none;border-color: var(--accent);box-shadow: 0 0 0 3px var(--accent-glow);}
-        .finder-btn {width: 100%;padding: 18px;background: linear-gradient(135deg,var(--accent),var(--gradient-end));color: white;border: none;border-radius: var(--radius-md);font-size: 1.1rem;font-weight: 700;cursor: pointer;transition: transform 0.2s,box-shadow 0.2s;font-family: inherit;}
-        .finder-btn:hover {transform: translateY(-2px);box-shadow: 0 8px 30px var(--accent-glow);}
-        .finder-results {max-width: 900px;margin: 60px auto;padding: 0 24px;}
-        .result-card {background: var(--bg-card);border: 1px solid var(--border-color);border-radius: var(--radius-lg);padding: 32px;margin-bottom: 24px;transition: border-color 0.2s;}
-        .result-card:hover {border-color: var(--accent);}
-        .result-header {display: flex;align-items: center;justify-content: space-between;margin-bottom: 16px;flex-wrap:wrap;gap:12px;}
-        .result-category {background: var(--accent);color: white;padding: 4px 12px;border-radius: 20px;font-size: 0.8rem;font-weight: 600;}
-        .result-commission {color: var(--success);font-weight: 700;font-size: 1.1rem;}
-        .result-title {font-size: 1.5rem;font-weight: 700;margin-bottom: 12px;color: var(--text-primary);}
-        .result-desc {color: var(--text-secondary);line-height: 1.7;margin-bottom: 20px;}
-        .result-match {display: flex;gap: 16px;margin-bottom: 20px;flex-wrap: wrap;}
-        .match-tag {background: var(--bg-primary);padding: 6px 14px;border-radius: 20px;font-size: 0.85rem;color: var(--text-secondary);}
-        .result-cta {display: inline-block;padding: 14px 28px;background: linear-gradient(135deg,var(--accent),var(--gradient-end));color: white;border-radius: var(--radius-md);font-weight: 700;transition: transform 0.2s,box-shadow 0.2s;text-decoration:none;}
-        .result-cta:hover {transform: translateY(-2px);box-shadow: 0 6px 20px var(--accent-glow);color:white;}
-        .no-results {text-align: center;padding: 60px 20px;color: var(--text-secondary);}
-        .disclaimer {text-align: center;color: var(--text-muted);font-size: 0.85rem;margin-top: 40px;padding: 20px;border-top: 1px solid var(--border-color);}
+        .finder-form-wrap { max-width: 720px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 40px; }
+        .form-group { margin-bottom: 24px; text-align: left; }
+        .form-label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-primary); }
+        .form-select { width: 100%; padding: 14px 18px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-primary); font-size: 1rem; font-family: inherit; }
+        .form-select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+        .finder-btn { width: 100%; padding: 16px; background: var(--accent); color: white; border: none; border-radius: var(--radius-md); font-size: 1.05rem; font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 8px; }
+        .finder-btn:hover { background: var(--accent-hover); }
+        .result-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 16px; }
+        .result-card:hover { border-color: var(--accent); }
+        .result-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+        .result-category { background: var(--accent-soft); color: var(--accent-light); padding: 4px 12px; border-radius: 100px; font-size: 0.78rem; font-weight: 600; }
+        .result-affiliate { background: var(--success); color: white; padding: 4px 12px; border-radius: 100px; font-size: 0.78rem; font-weight: 600; }
+        .result-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .result-desc { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; font-size: 0.95rem; }
+        .result-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+        .no-results { text-align: center; padding: 40px 20px; color: var(--text-secondary); }
     </style>
 </head>
 <body>
@@ -56,89 +47,132 @@
                 <a href="category/make-money.html" class="nav-link">Make Money</a>
                 <a href="category/save-money.html" class="nav-link">Save Money</a>
                 <a href="category/get-paid-to-start.html" class="nav-link">Get Paid to Start</a>
-                <a href="compare/index.html" class="nav-link">Compare</a>
-                <a href="about.html" class="nav-link">About</a>
+                <a href="guides/how-to-make-first-100-online-with-ai.html" class="nav-link">First $100 Guide</a>
             </nav>
+            <a href="index.html#get-the-list" class="nav-cta">Get the Free List →</a>
         </div>
     </header>
-    <section class="ai-finder-hero">
-        <div class="container">
-            <div class="hero-badge"><span class="badge-dot"></span>Find Your Match</div>
-            <h1 class="hero-title">Find your best tool</h1>
-            <p class="hero-subtitle">Answer 3 questions. Get a personalized recommendation across AI tools, automation platforms, and online programs.<br>All programs tested and reviewed — start with the one that fits your situation.</p>
-        </div>
-    </section>
-    <section>
-        <div class="container">
-            <div class="ai-finder-form">
-                <div class="form-group">
-                    <label class="form-label" for="goal">What is your goal?</label>
-                    <select id="goal" class="form-select">
-                        <option value="">Select your primary goal...</option>
-                        <option value="quick">Earn money fast (under 30 days)</option>
-                        <option value="passive">Build passive income ($500+/month)</option>
-                        <option value="service">Start a service business online</option>
-                        <option value="audience">Build an audience (newsletter/social)</option>
-                        <option value="scale">Automate an existing business</option>
-                        <option value="save">Save money on tools I already use</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="time">How much time can you commit weekly?</label>
-                    <select id="time" class="form-select">
-                        <option value="">Select time commitment...</option>
-                        <option value="hour">Less than 2 hours</option>
-                        <option value="few">2-5 hours</option>
-                        <option value="half">5-15 hours</option>
-                        <option value="full">Full-time (15+ hours)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="budget">What is your starting budget?</label>
-                    <select id="budget" class="form-select">
-                        <option value="">Select budget range...</option>
-                        <option value="free">$0 — I need free options</option>
-                        <option value="low">$10-50/mo — Can invest modestly</option>
-                        <option value="mid">$50-200/mo — Can invest significantly</option>
-                        <option value="high">$200+/mo — Ready to invest</option>
-                    </select>
-                </div>
-                <button class="finder-btn" onclick="findPrograms()">◈ Find My Matches</button>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-badge">🎯 Find your match</div>
+                <h1>Find your best tool</h1>
+                <p class="hero-sub">Answer 3 questions. Get a personalized recommendation across AI tools, automation platforms, and online programs.</p>
             </div>
-        </div>
-    </section>
-    <section class="finder-results" id="results"></section>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="finder-form-wrap">
+                    <div class="form-group">
+                        <label class="form-label" for="goal">What is your goal?</label>
+                        <select id="goal" class="form-select">
+                            <option value="">Select your primary goal...</option>
+                            <option value="quick">Earn money fast (under 30 days)</option>
+                            <option value="passive">Build passive income ($500+/month)</option>
+                            <option value="service">Start a service business online</option>
+                            <option value="audience">Build an audience (newsletter/social)</option>
+                            <option value="scale">Automate an existing business</option>
+                            <option value="save">Save money on tools I already use</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="time">Time per week?</label>
+                        <select id="time" class="form-select">
+                            <option value="">Select time commitment...</option>
+                            <option value="hour">Less than 2 hours</option>
+                            <option value="few">2-5 hours</option>
+                            <option value="half">5-15 hours</option>
+                            <option value="full">Full-time (15+ hours)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="budget">Starting budget?</label>
+                        <select id="budget" class="form-select">
+                            <option value="">Select budget...</option>
+                            <option value="free">$0 — Free options only</option>
+                            <option value="low">$10-50/mo</option>
+                            <option value="mid">$50-200/mo</option>
+                            <option value="high">$200+/mo</option>
+                        </select>
+                    </div>
+                    <button class="finder-btn" onclick="findTools()">◈ Find My Matches</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="results-wrap" style="display:none;">
+            <div class="container">
+                <div id="results" class="faq-grid"></div>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 24px;">
+                    <a href="affiliate-disclosure.html" style="color: var(--accent-light);">Affiliate Disclosure:</a> Green badges = we earn from this tool. No badge = informational only.
+                </p>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand-name"><span style="color: var(--accent);">◈</span> ListingsAI</div>
+                    <p class="footer-desc">Honest reviews of AI tools and online programs that help you earn or save money.</p>
+                    <p class="footer-disclosure">Affiliate-supported: ClickFunnels and the I'm All In bundle only.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Browse</h4>
+                    <ul class="footer-links">
+                        <li><a href="category/make-money.html">Make Money</a></li>
+                        <li><a href="category/save-money.html">Save Money</a></li>
+                        <li><a href="category/get-paid-to-start.html">Get Paid to Start</a></li>
+                        <li><a href="guides/how-to-make-first-100-online-with-ai.html">First $100 Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Read</h4>
+                    <ul class="footer-links">
+                        <li><a href="lead-magnet.html">Free 7-Tool List</a></li>
+                        <li><a href="ai-finder.html">Tool Finder</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="how-we-review.html">How We Review</a></li>
+                        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>© 2026 Brain Storm Corp — ListingsAI · <a href="affiliate-disclosure.html">Affiliate Disclosure</a> · <a href="how-we-review.html">How We Review</a> · <a href="contact.html">Contact</a></p>
+                <p>© 2026 Brain Storm Corp — ListingsAI</p>
                 <p>Independently reviewed · Affiliate-supported</p>
             </div>
         </div>
     </footer>
+
     <script>
-    const programDB = [
-        {id:'systeme',name:'Systeme.io',category:'Make Money',commission:'60% recurring for life',commissionDetail:'Free plan (2,000 contacts) — earn 60% of every paid plan',type:'recurring',desc:'All-in-one platform for funnels, email, courses. The new affiliate favourite. Free plan is real, no credit card required.',match:{quick:7,passive:9,service:7,audience:8,scale:6,save:4},time:{hour:6,few:8,half:10,full:10},budget:{free:10,low:10,mid:10,high:9},ctaUrl:'https://systeme.io/?aff=listingsai',ctaLabel:'Try Systeme.io Free →',reviewUrl:'category/make-money.html'},
-        {id:'make',name:'Make.com',category:'Make Money',commission:'35% recurring',commissionDetail:'Per-operation pricing, free tier to learn',type:'recurring',desc:'Visual automation builder. Sell AI automations to businesses ($500-2,000 per project). Best payout for non-US users via Wise.',match:{quick:6,passive:7,service:10,audience:5,scale:10,save:3},time:{hour:4,few:7,half:9,full:10},budget:{free:9,low:9,mid:10,high:10},ctaUrl:'https://www.make.com/en/register?aff=listingsai',ctaLabel:'Try Make.com Free →',reviewUrl:'category/make-money.html'},
-        {id:'beehiiv',name:'Beehiiv',category:'Make Money',commission:'Up to 60% recurring',commissionDetail:'Free up to 2,500 subscribers, ad network for monetization',type:'recurring',desc:'Newsletter platform built by ex-Morning Brew people. Ad network lets you monetize even small lists. Best for content-first creators.',match:{quick:5,passive:10,service:4,audience:10,scale:6,save:2},time:{hour:5,few:7,half:9,full:10},budget:{free:10,low:8,mid:9,high:9},ctaUrl:'https://www.beehiiv.com/?aff=listingsai',ctaLabel:'Start Free Newsletter →',reviewUrl:'category/make-money.html'},
-        {id:'fiverr',name:'Fiverr',category:'Get Paid to Start',commission:'You keep 80%',commissionDetail:'Free to list, fast payouts, global marketplace',type:'service',desc:'Fastest path to your first $100 online. Sell a service (writing, design, video) starting at $5. Built-in audience of buyers.',match:{quick:10,passive:3,service:9,audience:3,scale:5,save:1},time:{hour:6,few:9,half:10,full:10},budget:{free:10,low:10,mid:10,high:10},ctaUrl:'https://www.fiverr.com/?aff=listingsai',ctaLabel:'Open Fiverr Account →',reviewUrl:'category/get-paid-to-start.html'},
-        {id:'appsumo',name:'AppSumo',category:'Save Money',commission:'Lifetime deals',commissionDetail:'60-day refund window on every purchase',type:'one-time',desc:'Lifetime software licenses for one-time fees. The flagship "save money" play. Cut recurring costs on tools you already use.',match:{quick:4,passive:2,service:4,audience:3,scale:4,save:10},time:{hour:8,few:9,half:10,full:10},budget:{free:5,low:10,mid:10,high:10},ctaUrl:'https://appsumo.sjv.io/c/123456/listingsai',ctaLabel:'Browse AppSumo Deals →',reviewUrl:'category/save-money.html'},
-        {id:'payoneer',name:'Payoneer',category:'Get Paid to Start',commission:'Universal payout',commissionDetail:'Free to sign up, US/EU virtual bank account',type:'infra',desc:'Universal payout rail for 200+ countries. Required infrastructure — set up first. Enables getting paid by Fiverr, Upwork, affiliate networks.',match:{quick:8,passive:5,service:7,audience:4,scale:6,save:3},time:{hour:10,few:10,half:10,full:10},budget:{free:10,low:10,mid:10,high:10},ctaUrl:'https://www.payoneer.com/?aff=listingsai',ctaLabel:'Open Free Payoneer →',reviewUrl:'category/get-paid-to-start.html'},
-        {id:'wise',name:'Wise',category:'Save Money',commission:'Mid-market rate',commissionDetail:'0.4-1.5% fees vs 3-7% at banks',type:'infra',desc:'The best way to convert Payoneer payouts to your local currency. Mid-market exchange rate. Saves hundreds per year on international transfers.',match:{quick:6,passive:4,service:6,audience:3,scale:5,save:10},time:{hour:10,few:10,half:10,full:10},budget:{free:10,low:10,mid:10,high:10},ctaUrl:'https://wise.com/invite/listingsai',ctaLabel:'Open Free Wise Account →',reviewUrl:'category/save-money.html'},
-        {id:'kartra',name:'Kartra',category:'Make Money',commission:'40% + 10% tier 2',commissionDetail:'14-day trial at $1, all-in-one platform',type:'recurring',desc:'All-in-one platform for course creators and coaches. 10% second-tier is rare and valuable. Often overlooked vs ClickFunnels.',match:{quick:5,passive:8,service:7,audience:7,scale:7,save:3},time:{hour:5,few:7,half:9,full:10},budget:{free:3,low:8,mid:10,high:10},ctaUrl:'https://home.kartra.com/affiliate?aff=listingsai',ctaLabel:'Try Kartra $1 →',reviewUrl:'category/make-money.html'},
-        {id:'elevenlabs',name:'ElevenLabs',category:'Make Money',commission:'22% recurring',commissionDetail:'$5 minimum payout, multilingual',type:'recurring',desc:'Best-in-class AI voice generation. Sell voice-over services, build audiobooks, narrate videos. The AI-voice niche is hot right now.',match:{quick:7,passive:7,service:9,audience:5,scale:6,save:2},time:{hour:5,few:7,half:9,full:10},budget:{free:8,low:9,mid:9,high:9},ctaUrl:'https://elevenlabs.io/?aff=listingsai',ctaLabel:'Try ElevenLabs →',reviewUrl:'category/make-money.html'},
-        {id:'notion',name:'Notion',category:'Make Money',commission:'50% first year',commissionDetail:'180-day cookie, free for personal use',type:'one-time',desc:'Build templates, knowledge bases, second brains. 180-day cookie is the longest in the industry. Templates sell well on Gumroad.',match:{quick:6,passive:6,service:7,audience:6,scale:5,save:7},time:{hour:6,few:8,half:9,full:10},budget:{free:10,low:9,mid:9,high:8},ctaUrl:'https://affiliate.notion.so/?aff=listingsai',ctaLabel:'Try Notion Free →',reviewUrl:'category/make-money.html'}
+    const tools = [
+        {name:'ClickFunnels',category:'Make Money',affiliate:true,desc:'All-in-one funnel builder. The default choice. 14-day free trial, no card.',url:'https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380',cta:'Start free trial →',match:{quick:7,passive:9,service:7,audience:7,scale:6,save:3},time:{hour:5,few:8,half:10,full:10},budget:{free:8,low:10,mid:10,high:9}},
+        {name:"I'm All In Bundle",category:'Make Money',affiliate:true,desc:'12 months of ClickFunnels Scale + Traffic Secrets + community. $1,970 one-time.',url:'https://www.imallin.com/?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380',cta:'See bundle →',match:{quick:3,passive:10,service:5,audience:8,scale:7,save:3},time:{hour:9,few:10,half:10,full:10},budget:{free:0,low:1,mid:5,high:10}},
+        {name:'Systeme.io',category:'Make Money',affiliate:false,desc:'All-in-one with a real free plan (2,000 contacts). Best value at $27/mo.',url:'https://systeme.io/',cta:'Start free →',match:{quick:8,passive:9,service:7,audience:8,scale:5,save:5},time:{hour:6,few:8,half:10,full:10},budget:{free:10,low:10,mid:9,high:7}},
+        {name:'Make.com',category:'Make Money',affiliate:false,desc:'No-code automation. Sell AI automations to businesses ($500-2,000 each).',url:'https://www.make.com/en/register',cta:'Try free →',match:{quick:6,passive:7,service:10,audience:4,scale:10,save:3},time:{hour:4,few:7,half:9,full:10},budget:{free:9,low:9,mid:10,high:10}},
+        {name:'Beehiiv',category:'Make Money',affiliate:false,desc:'Newsletter platform. Free up to 2,500 subs. Built-in ad network.',url:'https://www.beehiiv.com/',cta:'Start free →',match:{quick:5,passive:10,service:3,audience:10,scale:5,save:2},time:{hour:5,few:7,half:9,full:10},budget:{free:10,low:9,mid:9,high:8}},
+        {name:'Fiverr',category:'Get Paid',affiliate:false,desc:'Sell a service starting at $5. Fastest path to your first $100 online.',url:'https://www.fiverr.com/',cta:'Open account →',match:{quick:10,passive:3,service:9,audience:3,scale:5,save:1},time:{hour:6,few:9,half:10,full:10},budget:{free:10,low:10,mid:10,high:10}},
+        {name:'Payoneer',category:'Get Paid',affiliate:false,desc:'Universal payout rail for 200+ countries. Set up first.',url:'https://www.payoneer.com/',cta:'Open free →',match:{quick:8,passive:5,service:7,audience:4,scale:6,save:3},time:{hour:10,few:10,half:10,full:10},budget:{free:10,low:10,mid:10,high:10}},
+        {name:'Wise',category:'Save Money',affiliate:false,desc:'Mid-market exchange rate. Saves hundreds/yr on international transfers.',url:'https://wise.com/',cta:'Open free →',match:{quick:5,passive:4,service:6,audience:3,scale:5,save:10},time:{hour:10,few:10,half:10,full:10},budget:{free:10,low:10,mid:10,high:10}},
+        {name:'AppSumo',category:'Save Money',affiliate:false,desc:'Lifetime software deals. 60-day refund. Cut recurring costs.',url:'https://appsumo.com/',cta:'Browse deals →',match:{quick:4,passive:2,service:4,audience:3,scale:4,save:10},time:{hour:8,few:9,half:10,full:10},budget:{free:5,low:10,mid:10,high:10}}
     ];
-    function scoreProgram(program,goal,time,budget) {
-        return (program.match[goal]||0)*3 + (program.time[time]||0)*2 + (program.budget[budget]||0)*2;
-    }
-    function findPrograms() {
-        const goal=document.getElementById('goal').value,time=document.getElementById('time').value,budget=document.getElementById('budget').value,resultsDiv=document.getElementById('results');
-        if(!goal||!time||!budget) {resultsDiv.innerHTML='<div class="no-results"><p>Please answer all 3 questions to get your personalized recommendations.</p></div>';return;}
-        const scored=programDB.map(p=>({program:p,score:scoreProgram(p,goal,time,budget)})).sort((a,b)=>b.score-a.score);
-        const top=scored.slice(0,3);
-        resultsDiv.innerHTML='<div class="section-header" style="text-align:center;margin-bottom:40px;"><span class="section-tag">Your Top Matches</span><h2 class="section-title">Recommended Tools For You</h2><p class="section-desc">Based on your answers, here are your best matches — all tested and reviewed.</p></div>'+top.map(({program},i)=>`<div class="result-card"><div class="result-header"><span class="result-category">${program.category}</span><span class="result-commission">${program.commission}</span></div>${i===0?'<div style="background:var(--success);color:white;padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600;display:inline-block;margin-bottom:12px;">★ Best Match</div>':''}<h3 class="result-title">${program.name}</h3><p class="result-desc">${program.desc}</p><div class="result-match"><span class="match-tag">◈ ${program.commissionDetail}</span></div><a href="${program.ctaUrl}" target="_blank" rel="noopener" class="result-cta">${program.ctaLabel}</a> <a href="${program.reviewUrl}" class="result-cta" style="background:var(--bg-secondary);color:var(--text-primary);margin-left:8px;">Read Review →</a></div>`).join('')+'<div class="disclaimer"><p>Results based on your inputs. <a href="affiliate-disclosure.html" style="color:var(--accent);">Affiliate Disclosure:</a> links above may earn us commissions at no additional cost to you. All programs tested and reviewed by ListingsAI.</p></div>';
-        resultsDiv.scrollIntoView({behavior:'smooth',block:'start'});
+    function score(t,g,tm,b){return (t.match[g]||0)*3+(t.time[tm]||0)*2+(t.budget[b]||0)*2}
+    function findTools(){
+        const g=document.getElementById('goal').value,tm=document.getElementById('time').value,b=document.getElementById('budget').value,r=document.getElementById('results'),w=document.getElementById('results-wrap');
+        if(!g||!tm||!b){r.innerHTML='<div class="no-results"><p>Please answer all 3 questions to get your matches.</p></div>';w.style.display='block';return}
+        const top=[...tools].map(t=>({t,s:score(t,g,tm,b)})).sort((a,b)=>b.s-a.s).slice(0,3);
+        r.innerHTML='<div style="text-align:center;margin-bottom:32px;"><span class="hero-badge" style="margin-bottom:12px;"><span class="badge-dot"></span>Your top matches</span><h2 style="margin-top:16px;">Recommended tools for you</h2></div>'+top.map(({t},i)=>`<div class="result-card"><div class="result-header"><span class="result-category">${t.category}</span>${t.affiliate?'<span class="result-affiliate">★ Affiliate-supported</span>':''}</div>${i===0?'<div style="background:var(--success);color:white;padding:4px 12px;border-radius:100px;font-size:0.78rem;font-weight:600;display:inline-block;margin-bottom:8px;">Best match</div>':''}<h3 class="result-title">${t.name}</h3><p class="result-desc">${t.desc}</p><div class="result-actions"><a href="${t.url}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">${t.cta}</a> ${t.affiliate?'<span style="font-size:0.78rem;color:var(--text-muted);align-self:center;">We may earn a commission</span>':''}</div></div>`).join('');
+        w.style.display='block';
+        w.scrollIntoView({behavior:'smooth',block:'start'});
     }
     </script>
 </body>
