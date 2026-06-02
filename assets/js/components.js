@@ -1,10 +1,17 @@
 /* ListingsAI — Shared UI components
    - Injects: header, side panel, background mesh
    - Behavior: menu toggle, search filter, scroll-spy, fade-in
-   - Add to any page with: <script src="assets/js/components.js" defer></script>
-   Place inside <body> at the end so it can find the body element. */
+   - Path-aware: works from /, /category/, /guides/, /articles/
+   Add to any page with: <script src="assets/js/components.js" defer></script> */
 (function () {
   'use strict';
+
+  // Path detection — works from root, /category/, /guides/, /articles/
+  // Returns '../' when in a subdir, '' when at root
+  const pathSegs = window.location.pathname.split('/').filter(Boolean);
+  const isSubdir = pathSegs.length > 1 || (pathSegs.length === 1 && !pathSegs[0].endsWith('.html'));
+  const BASE = isSubdir ? '../' : '';
+  const FILE = pathSegs[pathSegs.length - 1] || 'index.html';
 
   // Logo SVG (shared)
   const LOGO_SVG = `<svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -26,18 +33,18 @@
   const HEADER = `
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo" aria-label="ListingsAI home">
+      <a href="${BASE}index.html" class="logo" aria-label="ListingsAI home">
         ${LOGO_SVG}
         <span class="logo-text">Listings<span class="accent">AI</span></span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="category/make-money.html" class="nav-link" data-nav="make-money">Make Money</a>
-        <a href="category/save-money.html" class="nav-link" data-nav="save-money">Save Money</a>
-        <a href="category/get-paid-to-start.html" class="nav-link" data-nav="get-paid-to-start">Get Paid to Start</a>
-        <a href="guides/how-to-make-first-100-online-with-ai.html" class="nav-link" data-nav="guides">Guides</a>
+        <a href="${BASE}category/make-money.html" class="nav-link" data-nav="make-money">Make Money</a>
+        <a href="${BASE}category/save-money.html" class="nav-link" data-nav="save-money">Save Money</a>
+        <a href="${BASE}category/get-paid-to-start.html" class="nav-link" data-nav="get-paid-to-start">Get Paid to Start</a>
+        <a href="${BASE}guides/how-to-make-first-100-online-with-ai.html" class="nav-link" data-nav="guides">Guides</a>
       </nav>
       <div class="header-actions">
-        <a href="#get-the-list" class="btn btn-primary btn-sm nav-cta">Get the Free List →</a>
+        <a href="${BASE}#get-the-list" class="btn btn-primary btn-sm nav-cta">Get the Free List →</a>
         <button class="menu-toggle" type="button" aria-label="Open menu" data-menu-toggle>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -49,7 +56,7 @@
   const SIDE_PANEL = `
   <aside class="side-panel" data-side-panel aria-label="Site navigation">
     <div class="side-panel-header">
-      <a href="index.html" class="logo">
+      <a href="${BASE}index.html" class="logo">
         ${LOGO_SVG}
         <span class="logo-text">Listings<span class="accent">AI</span></span>
       </a>
@@ -63,19 +70,19 @@
     <nav class="side-panel-body" data-side-panel-body>
       <div class="side-panel-section">
         <div class="side-panel-section-title">Main</div>
-        <a href="index.html" class="side-panel-link" data-side="index">
+        <a href="${BASE}index.html" class="side-panel-link" data-side="index">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 4l9 8"/><path d="M5 10v10h14V10"/></svg>
           Home
         </a>
-        <a href="about.html" class="side-panel-link" data-side="about">
+        <a href="${BASE}about.html" class="side-panel-link" data-side="about">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
           About
         </a>
-        <a href="contact.html" class="side-panel-link" data-side="contact">
+        <a href="${BASE}contact.html" class="side-panel-link" data-side="contact">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>
           Contact
         </a>
-        <a href="affiliate-disclosure.html" class="side-panel-link" data-side="affiliate-disclosure">
+        <a href="${BASE}affiliate-disclosure.html" class="side-panel-link" data-side="affiliate-disclosure">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg>
           Affiliate Disclosure
         </a>
@@ -83,45 +90,46 @@
 
       <div class="side-panel-section">
         <div class="side-panel-section-title">Categories</div>
-        <a href="category/make-money.html" class="side-panel-link" data-side="make-money">
+        <a href="${BASE}category/make-money.html" class="side-panel-link" data-side="make-money">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9c0-1 1-2 3-2s3 1 3 2-1 2-3 2-3 1-3 2 1 2 3 2 3-1 3-2M12 6v2M12 16v2"/></svg>
           Make Money
-          <span class="side-panel-link-badge affiliate">3</span>
+          <span class="side-panel-link-badge affiliate">4</span>
         </a>
-        <a href="category/save-money.html" class="side-panel-link" data-side="save-money">
+        <a href="${BASE}category/save-money.html" class="side-panel-link" data-side="save-money">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7H5l3 12h8zM5 7l1-3h12l1 3"/><circle cx="12" cy="13" r="1.5"/></svg>
           Save Money
           <span class="side-panel-link-badge affiliate">1</span>
         </a>
-        <a href="category/get-paid-to-start.html" class="side-panel-link" data-side="get-paid-to-start">
+        <a href="${BASE}category/get-paid-to-start.html" class="side-panel-link" data-side="get-paid-to-start">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
           Get Paid to Start
+          <span class="side-panel-link-badge affiliate">5</span>
         </a>
       </div>
 
       <div class="side-panel-section">
         <div class="side-panel-section-title">Reviews</div>
-        <a href="articles/clickfunnels-review.html" class="side-panel-link" data-side="clickfunnels-review">
+        <a href="${BASE}articles/clickfunnels-review.html" class="side-panel-link" data-side="clickfunnels-review">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9 12 2"/></svg>
           ClickFunnels
           <span class="side-panel-link-badge affiliate">AFF</span>
         </a>
-        <a href="articles/im-all-in-review.html" class="side-panel-link" data-side="im-all-in-review">
+        <a href="${BASE}articles/im-all-in-review.html" class="side-panel-link" data-side="im-all-in-review">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9 12 2"/></svg>
           I'm All In
           <span class="side-panel-link-badge affiliate">AFF</span>
         </a>
-        <a href="articles/systeme-review.html" class="side-panel-link" data-side="systeme-review">
+        <a href="${BASE}articles/systeme-review.html" class="side-panel-link" data-side="systeme-review">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9 12 2"/></svg>
           Systeme.io
           <span class="side-panel-link-badge affiliate">AFF</span>
         </a>
-        <a href="articles/dealify-review.html" class="side-panel-link" data-side="dealify-review">
+        <a href="${BASE}articles/dealify-review.html" class="side-panel-link" data-side="dealify-review">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9 12 2"/></svg>
           Dealify
           <span class="side-panel-link-badge affiliate">AFF</span>
         </a>
-        <a href="articles/moosend-review.html" class="side-panel-link" data-side="moosend-review">
+        <a href="${BASE}articles/moosend-review.html" class="side-panel-link" data-side="moosend-review">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9 12 2"/></svg>
           Moosend
           <span class="side-panel-link-badge affiliate">NEW</span>
@@ -130,19 +138,19 @@
 
       <div class="side-panel-section">
         <div class="side-panel-section-title">Guides & Articles</div>
-        <a href="guides/how-to-make-first-100-online-with-ai.html" class="side-panel-link" data-side="first-100">
+        <a href="${BASE}guides/how-to-make-first-100-online-with-ai.html" class="side-panel-link" data-side="first-100">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 8h16M8 4v16"/></svg>
           First $100 Online
         </a>
-        <a href="articles/how-to-choose-email-marketing.html" class="side-panel-link" data-side="email-marketing">
+        <a href="${BASE}articles/how-to-choose-email-marketing.html" class="side-panel-link" data-side="email-marketing">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>
           How to Choose Email Marketing
         </a>
-        <a href="articles/ai-tools-for-content-creators.html" class="side-panel-link" data-side="ai-tools-creators">
+        <a href="${BASE}articles/ai-tools-for-content-creators.html" class="side-panel-link" data-side="ai-tools-creators">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M5 5l3 3M2 12h4M19 5l-3 3M22 12h-4M5 19l3-3M19 19l-3-3"/><circle cx="12" cy="12" r="4"/></svg>
           AI Tools for Creators
         </a>
-        <a href="articles/why-most-affiliate-sites-fail.html" class="side-panel-link" data-side="affiliate-sites-fail">
+        <a href="${BASE}articles/why-most-affiliate-sites-fail.html" class="side-panel-link" data-side="affiliate-sites-fail">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16v.5"/></svg>
           Why Most Affiliate Sites Fail
         </a>
@@ -150,11 +158,11 @@
 
       <div class="side-panel-section">
         <div class="side-panel-section-title">Company</div>
-        <a href="how-we-review.html" class="side-panel-link" data-side="how-we-review">
+        <a href="${BASE}how-we-review.html" class="side-panel-link" data-side="how-we-review">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
           How We Review
         </a>
-        <a href="privacy.html" class="side-panel-link" data-side="privacy">
+        <a href="${BASE}privacy.html" class="side-panel-link" data-side="privacy">
           <svg class="side-panel-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 1 1 8 0v4"/></svg>
           Privacy Policy
         </a>
@@ -183,9 +191,8 @@
     panelDiv.innerHTML = SIDE_PANEL;
     document.body.appendChild(panelDiv);
 
-    // Active state for current page
-    const path = window.location.pathname;
-    const fileName = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+    // Active state for current page (using FILE detected at script load)
+    const fileName = FILE;
     const sideLinks = document.querySelectorAll('[data-side]');
     sideLinks.forEach(link => {
       const side = link.getAttribute('data-side');
@@ -220,7 +227,6 @@
           const text = link.textContent.toLowerCase();
           link.style.display = (!q || text.includes(q)) ? '' : 'none';
         });
-        // Hide section titles if all links in that section are hidden
         document.querySelectorAll('.side-panel-section').forEach(section => {
           const visible = section.querySelectorAll('.side-panel-link:not([style*="display: none"])');
           const title = section.querySelector('.side-panel-section-title');
