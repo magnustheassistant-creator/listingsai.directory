@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="#0c0c0e"/><polygon points="50,15 80,35 80,65 50,85 20,65 20,35" fill="none" stroke="#7c3aed" stroke-width="4"/><circle cx="50" cy="50" r="15" fill="#7c3aed"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#67e8f9"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="100" height="100" rx="22" fill="#0a0a0e"/>
+  <polygon points="50,12 82,30 82,70 50,88 18,70 18,30" fill="none" stroke="url(#g1)" stroke-width="3" stroke-linejoin="round" filter="url(#glow)"/>
+  <polygon points="50,28 70,40 70,60 50,72 30,60 30,40" fill="url(#g2)" opacity="0.9"/>
+  <circle cx="50" cy="50" r="8" fill="#0a0a0e"/>
+  <circle cx="50" cy="50" r="4" fill="url(#g2)"/>
+</svg>
